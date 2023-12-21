@@ -102,6 +102,8 @@ import { MenuItems } from './MenuItems';
 import { FaHome, FaInfoCircle, FaBriefcase, FaAddressBook } from 'react-icons/fa';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { RxCross2 } from 'react-icons/rx';
+import { Route, Routes } from 'react-router-dom';
+import About from '../Pages/About';
 
 const Navbar = () => {
   const [isMenuVisible, setMenuVisible] = useState(false);

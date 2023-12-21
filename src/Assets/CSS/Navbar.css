@@ -59,6 +59,10 @@
     color: #fff;
 }
 
+.menu-icons{
+    display: none;
+}
+
 @media screen and (max-width :850px) {
     #Navbar{
         z-index: 99;
@@ -116,5 +120,9 @@
     
     #btn{
         display: none;
+    }
+
+    .menu-icons{
+        display: block;
     }
 }
