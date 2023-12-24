@@ -1,12 +1,12 @@
 import React from 'react'
 import Navbar from '../Components/Navbar'
-import ContactForm from '../Components/ContactForm'
+import SignupForm from '../Components/SignupForm'
 
 const SignUp = () => {
   return (
     <div>
         <Navbar/>
-        <ContactForm />
+        <SignupForm />
     </div>
   )
 }
