@@ -7,6 +7,9 @@
     width: 95%;
     height: 80px;
     border-radius: 13px;
+    position: relative;
+    margin-left: 3%;
+    /* text-align: center; */
 }
 
 #navbar-logo{
@@ -43,7 +46,7 @@
     display: none;
 }
 
-#btn{
+button{
     padding: 0.5rem 1rem;
     white-space: nowrap;
     border-radius: 0.3rem;
@@ -54,7 +57,7 @@
     transition: 0.2s ease-in-out;
 }
 
-#btn:hover{
+button:hover{
     background-color: #151516;
     color: #fff;
 }
@@ -72,7 +75,7 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        background-color: green;
+        background-color: #fff;
         width: 100%;
         height: auto;
         position: absolute;
@@ -118,7 +121,7 @@
         letter-spacing: 2px;
     }
     
-    #btn{
+    button{
         display: none;
     }
 

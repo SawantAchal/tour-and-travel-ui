@@ -1,3 +1,66 @@
+import React, { useState } from 'react';
+import '../Assets/CSS/Navbar.css';
+import { Link } from 'react-router-dom';
+import { MenuItems } from './MenuItems';
+import { FaHome, FaInfoCircle, FaBriefcase, FaAddressBook } from 'react-icons/fa';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { RxCross2 } from 'react-icons/rx';
+
+const Navbar = () => {
+  const [isMenuVisible, setMenuVisible] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuVisible(!isMenuVisible);
+  };
+
+  const getIcon = (iconName) => {
+    const icons = {
+      FaHome: <FaHome />,
+      FaInfoCircle: <FaInfoCircle />,
+      FaBriefcase: <FaBriefcase />,
+      FaAddressBook: <FaAddressBook />,
+    };
+
+    return icons[iconName] || null;
+  };
+
+  return (
+    <nav id='Navbar'>
+      <h1 id='navbar-logo'>Achal</h1>
+      <div className='menu-icons' onClick={toggleMenu}>
+        {isMenuVisible ? <RxCross2 /> : <GiHamburgerMenu />}
+      </div>
+      <ul id='nav-menu' className={isMenuVisible ? 'active' : ''}>
+        {MenuItems.map((item, index) => (
+          <li key={index}>
+            <Link to={item.url} className={item.className}>
+              {getIcon(item.icon)} {item.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
+      <Link to={"/signup"}><button id='btn'>Sign Up</button></Link>
+    </nav>
+  );
+};
+
+export default Navbar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // import React from 'react';
 // import '../Assets/CSS/Navbar.css';
 // import { Link } from 'react-router-dom';
@@ -93,54 +156,3 @@
 // };
 
 // export default Navbar;
-
-
-import React, { useState } from 'react';
-import '../Assets/CSS/Navbar.css';
-import { Link } from 'react-router-dom';
-import { MenuItems } from './MenuItems';
-import { FaHome, FaInfoCircle, FaBriefcase, FaAddressBook } from 'react-icons/fa';
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { RxCross2 } from 'react-icons/rx';
-import { Route, Routes } from 'react-router-dom';
-import About from '../Pages/About';
-
-const Navbar = () => {
-  const [isMenuVisible, setMenuVisible] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuVisible(!isMenuVisible);
-  };
-
-  const getIcon = (iconName) => {
-    const icons = {
-      FaHome: <FaHome />,
-      FaInfoCircle: <FaInfoCircle />,
-      FaBriefcase: <FaBriefcase />,
-      FaAddressBook: <FaAddressBook />,
-    };
-
-    return icons[iconName] || null;
-  };
-
-  return (
-    <nav id='Navbar'>
-      <h1 id='navbar-logo'>Achal</h1>
-      <div className='menu-icons' onClick={toggleMenu}>
-        {isMenuVisible ? <RxCross2 /> : <GiHamburgerMenu />}
-      </div>
-      <ul id='nav-menu' className={isMenuVisible ? 'active' : ''}>
-        {MenuItems.map((item, index) => (
-          <li key={index}>
-            <Link to={item.url} className={item.className}>
-              {getIcon(item.icon)} {item.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <button id='btn'>Sign Up</button>
-    </nav>
-  );
-};
-
-export default Navbar;
