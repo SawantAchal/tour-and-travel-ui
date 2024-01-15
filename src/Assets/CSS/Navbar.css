@@ -127,5 +127,8 @@ button:hover{
 
     .menu-icons{
         display: block;
+        margin-left: 18vh;
+        font-weight: 700;
+        font-size: x-large;
     }
 }

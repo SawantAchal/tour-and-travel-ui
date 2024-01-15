@@ -14,9 +14,9 @@ const Home = () => {
     <Hero
       cName="hero"
       heroImg ={img1}
-      Htitle="your journey your story"
-      Htext="chose ypur favourite destination"
-      btmText="travel Plan"
+      Htitle="Your journey your story"
+      Htext="Choose ypur favourite destination"
+      btmText="Travel Plan"
       url ="/travel-plan"
       btnClass="show"
      />
